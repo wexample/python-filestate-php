@@ -1,2 +1,3 @@
-name: filestate-php
-version: 0.0.1
+general:
+  name: filestate-php
+  version: 0.0.1

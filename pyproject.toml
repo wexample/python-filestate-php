@@ -4,7 +4,7 @@ build-backend = "pdm.backend"
 
 [project]
 name = "wexample-filestate-php"
-version = "0.0.40"
+version = "0.0.1"
 description = "Helpers for Php."
 authors = [
     { name = "weeger", email = "contact@wexample.com" },
@@ -49,12 +49,12 @@ distribution = true
 
 [tool.pdm.build]
 includes = [
-    "src/wexample_filestate_python/py.typed",
+    'src/wexample_filestate-php/py.typed',
 ]
 package-dir = "src"
 
 [[tool.pdm.build.packages]]
-include = "wexample_filestate_python"
+include = "wexample_filestate-php"
 from = "src"
 [tool.filestate]
 # These dev packages are removed from dependencies if not specified here.

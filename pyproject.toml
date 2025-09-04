@@ -16,17 +16,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "autoflake",
-    "black",
-    "flynt",
-    "isort",
-    "networkx",
-    "packaging",
-    "pydantic>=2,<3",
-    "python-dotenv",
-    "pyupgrade",
-    "tomlkit",
-    "wexample-filestate-git==0.0.38",
+    "wexample-filestate==0.0.50",
 ]
 
 [project.readme]
@@ -56,9 +46,3 @@ package-dir = "src"
 [[tool.pdm.build.packages]]
 include = "wexample_filestate-php"
 from = "src"
-[tool.filestate]
-# These dev packages are removed from dependencies if not specified here.
-keep = [
-  "black",
-  "isort"
-]

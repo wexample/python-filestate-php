@@ -2,7 +2,7 @@
 
 Helpers for Php.
 
-Version: 0.0.1
+Version: 0.0.2
 
 ## Requirements
 
@@ -11,7 +11,7 @@ Version: 0.0.1
 ## Dependencies
 
 - pydantic>=2,<3
-- wexample-filestate==0.0.50
+- wexample-filestate==0.0.51
 
 ## Installation
 

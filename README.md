@@ -10,17 +10,7 @@ Version: 0.0.1
 
 ## Dependencies
 
-- autoflake
-- black
-- flynt
-- isort
-- networkx
-- packaging
-- pydantic>=2,<3
-- python-dotenv
-- pyupgrade
-- tomlkit
-- wexample-filestate-git==0.0.38
+- wexample-filestate==0.0.50
 
 ## Installation
 

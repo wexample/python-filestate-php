@@ -2,7 +2,7 @@
 
 Helpers for Php.
 
-Version: 0.0.2
+Version: 0.0.3
 
 ## Requirements
 
@@ -12,7 +12,7 @@ Version: 0.0.2
 
 - attrs>=23.1.0
 - cattrs>=23.1.0
-- wexample-filestate==0.0.51
+- wexample-filestate==0.0.52
 
 ## Installation
 

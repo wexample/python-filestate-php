@@ -33,7 +33,7 @@ dev = [
 
 [tool.setuptools.packages.find]
 include = ["*"]
-exclude = ["wexample_filestate-php.testing*"]
+exclude = ["wexample_filestate_php.testing*"]
 
 [tool.pdm]
 distribution = true
@@ -42,7 +42,7 @@ distribution = true
 package-dir = "src"
 
 [[tool.pdm.build.packages]]
-include = "wexample_filestate-php"
+include = "wexample_filestate_php"
 from = "src"
 
 [tool.pytest.ini_options]
@@ -50,7 +50,7 @@ testpaths = ["tests"]
 pythonpath = ["src"]
 
 [tool.coverage.run]
-source = ["wexample_filestate-php"]
+source = ["wexample_filestate_php"]
 omit = ["*/tests/*", "*/.venv/*", "*/venv/*"]
 
 [tool.coverage.report]

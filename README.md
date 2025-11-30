@@ -119,7 +119,7 @@ Community support is available through GitHub Discussions.
 
 ## Contribution Guidelines
 
-We welcome contributions to the Wexample suite! 
+We welcome contributions to the Wexample suite!
 
 ### How to Contribute
 
@@ -137,7 +137,9 @@ See [CONTRIBUTORS.md](CONTRIBUTORS.md) for the full list of contributors.
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Free to use in both personal and commercial projects.
 
 ## Useful Links
 
@@ -145,7 +147,7 @@ MIT
 - **Documentation**: [docs.wexample.com](https://docs.wexample.com)
 - **Issue Tracker**: https://github.com/wexample/python-filestate-php/issues
 - **Discussions**: https://github.com/wexample/python-filestate-php/discussions
-- **PyPI**: [pypi.org/project/wexample-filestate-php](https://pypi.org/project/wexample-filestate-php/)
+- **PyPI**: [pypi.org/project/wexample-app](https://pypi.org/project/wexample-app/)
 
 ## Integration in the Suite
 

@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from wexample_filestate.option.mixin.with_docker_option_mixin import WithDockerOptionMixin
 from wexample_helpers.decorator.base_class import base_class
-
 from .abstract_php_file_content_option import AbstractPhpFileContentOption
 
 if TYPE_CHECKING:
@@ -18,7 +18,10 @@ class PhpcsFixerOption(AbstractPhpFileContentOption):
     def _apply_content_change(self, target: TargetFileOrDirectoryType) -> str:
         """Fix PHP code style using PHP-CS-Fixer via Docker."""
         # Get current content
-        current_content = target.get_local_file().read()
+        super()._execute_in_docker(
+            command="phpcs_fixer",
+            target=target
+        )
 
         # TODO: Implement Docker integration to run PHP-CS-Fixer
         # Steps to implement:
@@ -32,4 +35,7 @@ class PhpcsFixerOption(AbstractPhpFileContentOption):
         # php-cs-fixer fix --rules=@PSR12 <file_path>
         #
         # For now, return unchanged content
-        return current_content
+        # return current_content
+
+        # For now, return the same text saying nothing changes.
+        return target.read_text()

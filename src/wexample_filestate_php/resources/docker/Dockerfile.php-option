@@ -16,6 +16,9 @@ RUN composer global require friendsofphp/php-cs-fixer
 # Add Composer global bin to PATH
 ENV PATH="/root/.composer/vendor/bin:${PATH}"
 
+# Copy PHP-CS-Fixer configuration
+COPY .php-cs-fixer.dist.php /root/.php-cs-fixer.dist.php
+
 # Set working directory
 WORKDIR /var/www/html
 

@@ -20,13 +20,13 @@ class PhpcsFixerOption(AbstractPhpFileContentOption):
         # Get the file path inside the container
         container_file_path = self._get_container_file_path(target)
 
-        # Execute php-cs-fixer in Docker
+        # Execute php-cs-fixer in Docker with centralized config
         self._execute_in_docker(
             target=target,
             command=[
                 "php-cs-fixer",
                 "fix",
-                "--rules=@PSR12",
+                "--config=/root/.php-cs-fixer.dist.php",
                 container_file_path
             ]
         )

@@ -17,11 +17,8 @@ class PhpcsFixerOption(AbstractPhpFileContentOption):
 
     def _apply_content_change(self, target: TargetFileOrDirectoryType) -> str:
         """Fix PHP code style using PHP-CS-Fixer via Docker."""
-        # Get the relative path of the file within the mounted volume
-        app_root = target.get_root().get_path()
-        file_path = target.get_path()
-        relative_path = file_path.replace(app_root, "").lstrip("/")
-        container_file_path = f"/var/www/html/{relative_path}"
+        # Get the file path inside the container
+        container_file_path = self._get_container_file_path(target)
 
         # Execute php-cs-fixer in Docker
         self._execute_in_docker(

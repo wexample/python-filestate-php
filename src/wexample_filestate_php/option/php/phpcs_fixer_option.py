@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from wexample_helpers.decorator.base_class import base_class
+
 from .abstract_php_file_content_option import AbstractPhpFileContentOption
 
 if TYPE_CHECKING:
@@ -26,8 +27,8 @@ class PhpcsFixerOption(AbstractPhpFileContentOption):
                 "php-cs-fixer",
                 "fix",
                 "--config=/root/.php-cs-fixer.dist.php",
-                container_file_path
-            ]
+                container_file_path,
+            ],
         )
 
         # Read the fixed content from the file (it was modified in place)

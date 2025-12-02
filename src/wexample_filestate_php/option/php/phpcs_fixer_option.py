@@ -17,25 +17,22 @@ class PhpcsFixerOption(AbstractPhpFileContentOption):
 
     def _apply_content_change(self, target: TargetFileOrDirectoryType) -> str:
         """Fix PHP code style using PHP-CS-Fixer via Docker."""
-        # Get current content
-        super()._execute_in_docker(
-            command="phpcs_fixer",
-            target=target
+        # Get the relative path of the file within the mounted volume
+        app_root = target.get_root().get_path()
+        file_path = target.get_path()
+        relative_path = file_path.replace(app_root, "").lstrip("/")
+        container_file_path = f"/var/www/html/{relative_path}"
+
+        # Execute php-cs-fixer in Docker
+        self._execute_in_docker(
+            target=target,
+            command=[
+                "php-cs-fixer",
+                "fix",
+                "--rules=@PSR12",
+                container_file_path
+            ]
         )
 
-        # TODO: Implement Docker integration to run PHP-CS-Fixer
-        # Steps to implement:
-        # 1. Start Docker container with PHP-CS-Fixer installed
-        # 2. Mount the file or pass content to the container
-        # 3. Execute php-cs-fixer fix command
-        # 4. Retrieve the fixed content
-        # 5. Return the fixed content
-        #
-        # Example command that will be executed in Docker:
-        # php-cs-fixer fix --rules=@PSR12 <file_path>
-        #
-        # For now, return unchanged content
-        # return current_content
-
-        # For now, return the same text saying nothing changes.
+        # Read the fixed content from the file (it was modified in place)
         return target.read_text()

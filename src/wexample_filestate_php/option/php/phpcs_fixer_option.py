@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from wexample_filestate.option.mixin.with_docker_option_mixin import WithDockerOptionMixin
 from wexample_helpers.decorator.base_class import base_class
 from .abstract_php_file_content_option import AbstractPhpFileContentOption
 

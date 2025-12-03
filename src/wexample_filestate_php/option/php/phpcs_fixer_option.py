@@ -26,7 +26,7 @@ class PhpcsFixerOption(AbstractPhpFileContentOption):
             command=[
                 "php-cs-fixer",
                 "fix",
-                "--config=/root/.php-cs-fixer.dist.php",
+                "--config=/home/appuser/.php-cs-fixer.dist.php",
                 container_file_path,
             ],
         )
